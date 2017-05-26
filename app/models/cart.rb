@@ -1,4 +1,4 @@
-class Cart < ApplicationRecord
+class Cart < ActiveRecord::Base
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
 
@@ -22,5 +22,5 @@ class Cart < ApplicationRecord
  def clean!
    cart_items.destroy_all
  end
- 
+
 end
